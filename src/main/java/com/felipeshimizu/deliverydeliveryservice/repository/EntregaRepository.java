@@ -1,4 +1,10 @@
 package com.felipeshimizu.deliverydeliveryservice.repository;
 
-public interface EntregaRepository {
+import com.felipeshimizu.deliverydeliveryservice.model.Entrega;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.UUID;
+
+public interface EntregaRepository extends JpaRepository<Entrega, UUID> {
+    boolean existsByPedidoId(UUID pedidoId);
 }
